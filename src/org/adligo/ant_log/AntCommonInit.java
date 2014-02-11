@@ -6,6 +6,7 @@ import org.adligo.i.log.client.LogFactory;
 import org.adligo.i.log.client.LogPlatform;
 import org.adligo.i.util.client.StringUtils;
 import org.adligo.jse.util.JSEPlatform;
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
 public class AntCommonInit {
@@ -13,15 +14,19 @@ public class AntCommonInit {
 	private static I_LogFactory FACTORY;
 	
 	
-	public static void initOrReload(String configFile, String message, Task task) throws Exception {
+	public static void initOrReload(String configFile, String message, Task task) throws BuildException {
 		log.warn(message);
 		if (StringUtils.isEmpty(configFile)) {
 			configFile = "adligo_log.properties";
 		}
+		
 		if (FACTORY == null) {
 			FACTORY = new AntLogFactory();
-			JSEPlatform.init();
-			
+			try {
+				JSEPlatform.init();
+			} catch (Exception x) {
+				throw new BuildException(x);
+			}
 			AntLogFactory.setCurrentTask(task);
 			LogPlatform.init(configFile, FACTORY);
 		} else {
