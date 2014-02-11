@@ -13,7 +13,7 @@ public class AntCommonInit {
 	private static I_LogFactory FACTORY;
 	
 	
-	public synchronized void initOrReload(String configFile, String message, Task task) throws Exception {
+	public static void initOrReload(String configFile, String message, Task task) throws Exception {
 		log.warn(message);
 		if (StringUtils.isEmpty(configFile)) {
 			configFile = "adligo_log.properties";
