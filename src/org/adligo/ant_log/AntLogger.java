@@ -12,8 +12,6 @@ public class AntLogger extends SimpleLog  {
 	
 	@Override
 	protected void print(String p) {
-		// TODO Auto-generated method stub
-		super.print(p);
 		AntLogFactory.getCurrentTask().log(p);
 	}
 }
