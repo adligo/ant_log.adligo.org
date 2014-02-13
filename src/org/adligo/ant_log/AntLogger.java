@@ -1,7 +1,7 @@
 package org.adligo.ant_log;
 
-import org.adligo.i.log.client.SimpleLog;
-import org.adligo.i.util.client.I_ImmutableMap;
+import org.adligo.i.log.shared.SimpleLog;
+import org.adligo.i.util.shared.I_ImmutableMap;
 
 
 public class AntLogger extends SimpleLog  {

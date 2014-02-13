@@ -1,8 +1,8 @@
 package org.adligo.ant_log;
 
-import org.adligo.i.log.client.DefaultLogFactory;
-import org.adligo.i.log.client.I_LogDelegate;
-import org.adligo.i.log.client.LogPlatform;
+import org.adligo.i.log.shared.DefaultLogFactory;
+import org.adligo.i.log.shared.I_LogDelegate;
+import org.adligo.i.log.shared.LogPlatform;
 import org.apache.tools.ant.Task;
 
 /**
