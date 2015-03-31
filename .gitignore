@@ -1,5 +1,6 @@
-/bin
-classes/
-classes_e/
-adligo_ant_log*.jar
+.classpath
+/bin/
+/classes/
+/classes_e/
+/adligo_ant_log*.jar
 /build/
